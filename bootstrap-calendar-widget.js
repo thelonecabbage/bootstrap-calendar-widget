@@ -128,6 +128,7 @@
 			});
 			
 			$target.delegate('td[data-id]', 'click', function (e) {
+				if($(e).parents('.popover')) return true;
 				e.preventDefault();
 				var $td = $(this);
 				var id = parseId($td.attr('data-id'));
